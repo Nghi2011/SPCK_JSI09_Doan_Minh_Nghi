@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Góc bàn luận</title>
+  <link rel="stylesheet" href="../style/educammunity.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.0.0/css/all.min.css">
+</head>
+<body>
+  <div id="header" class="mb-3">
+        <nav class="navbar navbar-expand-lg bg-primary-subtle">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Educammunity</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Trang chủ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="landingPage.html">Lời giới thiệu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="createPost.html">Tạo bài đăng</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Mở rộng
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="signUp.html">Đăng ký</a></li>
+            <li><a class="dropdown-item" href="signIn.html">Đăng nhập</a></li>
+            <li><button id="btnSignOut" class="btn btn-outline-danger">Đăng xuất</button></li>
+          </ul>
+        </li>
+        <li class="position-relative top-0 start-100">
+          <a class=" btn btn-outline-info  " id="accountOfUser" href="#" style="color: #3E5F44;"></a>
+        </li>
+        <!-- <li class="nav-item">
+          <a href="nav-link"><h5 class="open-sans text-success-emphasis text-decoration-underline">Người gửi: ${postObject.author}</h5></a>A
+        </li> -->
+      </ul>
+    </div>
+  </div>
+        </nav>
+    </div>
+<div id="body" class="mb-3">
+  <div class="container-fluid border rounded bg-green2"  id="insertPost">
+    
+  </div>
+  <div id="forumChatContainer" class="container bg-blue1 rounded border-start border-end border-info">
+        <div id="messagesContainer" class="border mb-3 container">
+            
+            
+        </div>
+        <div id="messageWrite" class="border p-3 border-2">
+            <form action="">
+                <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Nội dung tin nhắn</label>
+                <textarea class="form-control" id="messageBox" placeholder="Nhập tin nhắn bình luận bạn muốn ghi vào đây" rows="3"></textarea>
+                </div>
+                <button class="btn btn-outline-success" type="button" id="btnSendMessage">Gửi đi</button>
+                
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-database-compat.js"></script>
+<script src="../script/firebaseConfig.js"></script>
+<script src="../script/functionsInsert.js"></script>
+<script>
+  let userSession = JSON.parse(localStorage.getItem("userSession"))
+  let savedId = localStorage.getItem("saveID")
+</script>
+<script src="../script/discussionPages.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mục tạo bài viết trên diễn đàn</title>
+    <link rel="stylesheet" href="../style/educammunity.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-primary-subtle">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Educammunity</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="index.html">Trang chủ</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="landingPage.html">Lời giới thiệu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="createPost.html">Tạo bài đăng</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Mở rộng
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="signUp.html">Đăng ký</a></li>
+            <li><a class="dropdown-item" href="signIn.html">Đăng nhập</a></li>
+            <li><button id="btnSignOut" class="btn btn-outline-danger">Đăng xuất</button></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+        </nav>
+    <div id="creatingPostsArea" class="container bg-green1 p-3 mt-3">
+        <div id="header" class="container border border-info p-3 rounded bg-blue1 mt-3">
+            <div class="input-group flex-nowrap mb-3">
+            <span class="input-group-text" id="addon-wrapping">Tiêu đề của bài đăng</span>
+            <input type="text" class="form-control" placeholder="Nhập tiêu đề của bài đăng"  aria-describedby="addon-wrapping" id="postTitles" maxlength="100">
+        </div>
+        <div class="input-group flex-nowrap mb-3">
+            <span class="input-group-text" id="addon-wrapping1">Chọn môn học hướng theo bài viết</span>
+            <select class="form-select" aria-label="Default select example" aria-describedby="addon-wrapping1" id="selectSubject">
+            <option selected value="">Chọn môn học liên quan tới bài viết</option>
+            <option value="Toán">Toán</option>
+            <option value="Ngữ Văn/ Tiếng Việt">Ngữ Văn/Tiếng Việt</option>
+            <option value="Tiếng Anh">Tiếng Anh</option>
+            <option value="Lịch sử và địa lý">Lịch sử và địa lý</option>
+            <option value="Công nghệ">Công nghệ</option>
+            <option value="Giáo dục thể chất">Giáo dục thể chất</option>
+            <option value="Hóa học">Hóa học</option>
+            <option value="Vật lí">Vật lí</option>
+            <option value="Sinh học">Sinh học</option>
+            <option value="Tin học">Tin học</option>
+            <option value="Giáo dục công dân">Giáo dục công dân</option>
+            </select>
+        </div>
+        <div class="input-group flex-nowrap mb-3">
+            <span class="input-group-text" id="addon-wrapping2">Chọn khối lớp học của bài đăng</span>
+            <select class="form-select" aria-label="Default select example" aria-describedby="addon-wrapping2" id="selectGrade">
+            <option selected value="">Chọn khối lớp của môn</option>
+            <option value="1">Lớp 1</option>
+            <option value="2">Lớp 2</option>
+            <option value="3">Lớp 3</option>
+            <option value="4">Lớp 4</option>
+            <option value="5">Lớp 5</option>
+            <option value="6">Lớp 6</option>
+            <option value="7">Lớp 7</option>
+            <option value="8">Lớp 8</option>
+            <option value="9">Lớp 9</option>
+            <option value="10">Lớp 10</option>
+            <option value="11">Lớp 11</option>
+            <option value="12">Lớp 12</option>
+            </select>
+        </div>
+        </div>
+        <div id="body" class="container border border-primary-subtle p-3 rounded bg-blue2 mt-3">
+            <p class="lead text-decoration-underline text-info-emphasis text-center">Nội dung phần bài viết</p>
+            <div class="form-floating mb-3">
+            <input type="text" class="form-control form-control-lg" id="postContentGet" minlength="30">
+            <label for="postContentGet">Nhập nội dung/ vấn đề học tập/ câu hỏi về môn học của bạn trong ô dưới đây</label>
+            </div>
+            <div class="mb-3">
+            <label for="chooseFile" class="form-label">Chọn hình ảnh cho bài đăng của bạn</label>
+            <input class="form-control" type="file" id="chooseFile">
+            </div>
+
+        </div>
+        <div id="footer" class="container border-start border-end border-danger bg-green2 mt-3">
+            <p class="lead text-decoration-underline text-info-emphasis text-center">Phần phụ của bài viết, chỉnh sửa hình thức:</p>
+            <div class="container mb-3">
+                <label for="backgroundColorGet">Chọn màu thích hợp để tạo phông nền cho bài đăng của bạn</label>
+                <input type="color" id="backgroundColorGet" class="form-control form-control-color">
+            </div>
+        </div>
+        <div id="publishPostOnForum">
+            <button id="btnPublish" class="btn btn-outline-success" type="submit">Đăng bài viết này</button>
+        </div>
+    </div>
+</body>
+</html>
+<script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore-compat.js"></script>
+<script src="../script/firebaseConfig.js"></script>
+<script>
+  let userSession = JSON.parse(localStorage.getItem("userSession"))
+</script>
+<script src="../script/createPost.js"></script>
+<script src="../script/functionsInsert.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
