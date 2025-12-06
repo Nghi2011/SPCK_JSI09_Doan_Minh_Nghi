@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mục tạo bài viết trên diễn đàn</title>
-    <link rel="stylesheet" href="educammunity.css">
+    <link rel="stylesheet" href="../style/educammunity.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg bg-primary-subtle">
@@ -33,6 +33,9 @@
             <li><a class="dropdown-item" href="signIn.html">Đăng nhập</a></li>
             <li><button id="btnSignOut" class="btn btn-outline-danger">Đăng xuất</button></li>
           </ul>
+        </li>
+        <li class="top-0 start-100">
+          <a class=" btn btn-outline-info  " id="accountOfUser"  style="color: #3E5F44;"></a>
         </li>
       </ul>
     </div>
@@ -83,8 +86,13 @@
         <div id="body" class="container border border-primary-subtle p-3 rounded bg-blue2 mt-3">
             <p class="lead text-decoration-underline text-info-emphasis text-center">Nội dung phần bài viết</p>
             <div class="form-floating mb-3">
-            <input type="text" class="form-control form-control-lg" id="postContentGet" minlength="30">
-            <label for="postContentGet">Nhập nội dung/ vấn đề học tập/ câu hỏi về môn học của bạn trong ô dưới đây</label>
+            <!-- <input type="text" class="form-control form-control-lg" id="" minlength="30"> -->
+             <div class="mb-3">
+              <label for="postContentGet">Nhập nội dung/ vấn đề học tập/ câu hỏi về môn học của bạn trong ô dưới đây</label>
+              <!-- <label for="exampleFormControlTextarea1" class="form-label">Example exampleFormControlTextarea1textarea</label> -->
+              <textarea class="form-control" id="postContentGet" rows="10" min></textarea>
+            </div>
+            
             </div>
             <div class="mb-3">
             <label for="chooseFile" class="form-label">Chọn hình ảnh cho bài đăng của bạn</label>
@@ -92,13 +100,13 @@
             </div>
 
         </div>
-        <div id="footer" class="container border-start border-end border-danger bg-green2 mt-3">
+        <!-- <div id="footer" class="container border-start border-end border-danger bg-green2 mt-3">
             <p class="lead text-decoration-underline text-info-emphasis text-center">Phần phụ của bài viết, chỉnh sửa hình thức:</p>
             <div class="container mb-3">
                 <label for="backgroundColorGet">Chọn màu thích hợp để tạo phông nền cho bài đăng của bạn</label>
                 <input type="color" id="backgroundColorGet" class="form-control form-control-color">
             </div>
-        </div>
+        </div> -->
         <div id="publishPostOnForum">
             <button id="btnPublish" class="btn btn-outline-success" type="submit">Đăng bài viết này</button>
         </div>
@@ -108,12 +116,10 @@
 <script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore-compat.js"></script>
-<script src="firebaseConfig.js"></script>
-<script>
-  let userSession = JSON.parse(localStorage.getItem("userSession"))
-</script>
-<script src="createPost.js"></script>
-<script src="functionsInsert.js"></script>
+<script src="../script/firebaseConfig.js"></script>
+<script src="../script/functionsInsert.js"></script>
+<script src="../script/createPost.js"></script>
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -61,6 +61,7 @@
   font-size: large;
   font-variation-settings:
     "wdth" 100;
+
 }
 #creatingPostsArea{
     justify-content: center;
@@ -69,6 +70,7 @@
 #recentPosts{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
     gap: 10px;
 }
 .border-blue{

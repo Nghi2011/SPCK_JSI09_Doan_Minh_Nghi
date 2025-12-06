@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chủ diễn đàn học tập</title>
-    <link rel="stylesheet" href="../style/educammunity.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Góc bàn luận</title>
+  <link rel="stylesheet" href="../style/educammunity.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.0.0/css/all.min.css">
 </head>
 <body>
-    <div id="header" class="mb-3">
+  <div id="header" class="mb-3">
         <nav class="navbar navbar-expand-lg bg-primary-subtle">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Educammunity</a>
@@ -36,34 +36,36 @@
             <li><button id="btnSignOut" class="btn btn-outline-danger">Đăng xuất</button></li>
           </ul>
         </li>
+        <li class="top-0 start-100">
+          <a class=" btn btn-outline-info  " id="accountOfUser"  style="color: #3E5F44;"></a>
+        </li>
+        <!-- <li class="nav-item">
+          <a href="nav-link"><h5 class="open-sans text-success-emphasis text-decoration-underline">Người gửi: ${postObject.author}</h5></a>A
+        </li> -->
       </ul>
     </div>
   </div>
         </nav>
     </div>
 <div id="body" class="mb-3">
-    <div id="jumbotron" class="container mb-5">
-            <div class="card">
-            <div class="card-header">
-                <h1 class="display-5 text-center open-sans">Educammunity <i class="fa-sharp-duotone fa-thin fa-screen-users" style="--fa-primary-color: #8cb9bd; --fa-secondary-color: #8cb9bd;"></i></h1>
-                <p class="fs-3 fw-bold text-center text-info" id="currentDate">Ngày:  </p>
-            </div>
-            <div class="card-body">
-                <h5 class="card-title text-center" id="welcomeMessage"></h5>
-                <p class="card-text text-center">Hãy cùng nhau xây dựng một môi trường học tập sáng tạo và bổ ích nào!</p>
-                
-            </div>
-            </div>
+  <div class="container-fluid border rounded bg-green2"  id="insertPost">
+    
+  </div>
+  <div id="forumChatContainer" class="container bg-blue1 rounded border-start border-end border-info">
+        <div id="messagesContainer" class="border mb-3 container">
+            
+            
         </div>
-    <div id="headline">
-      <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Hãy tìm một bài đăng bàn luận bạn quan tâm" aria-label="Search"/>
-      <button class="btn btn-outline-success" type="submit">Tìm kiếm</button>
-    </form>
-      <p class="lead fs-5 fw-bold text-success-emphasis text-decoration-underline border border-blue bg-blue5 rounded mt-3 p-3 text-center">Những bài đăng mới nhất trong ngày hôm nay</p>
-    </div>
-    <div id="recentPosts" class="container-fluid border-start border-end border-primary-subtle bg-blue4">
-      <!-- <button onclick=""></button> -->
+        <div id="messageWrite" class="border p-3 border-2">
+            <form action="">
+                <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Nội dung tin nhắn</label>
+                <textarea class="form-control" id="messageBox" placeholder="Nhập tin nhắn bình luận bạn muốn ghi vào đây" rows="3"></textarea>
+                </div>
+                <button class="btn btn-outline-success" type="button" id="btnSendMessage">Gửi đi</button>
+                
+            </form>
+        </div>
     </div>
 </div>
 </body>
@@ -71,13 +73,14 @@
 <script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore-compat.js"></script>
-<script src="firebaseConfig.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.0.0/firebase-database-compat.js"></script>
+<script src="../script/firebaseConfig.js"></script>
+<script src="../script/functionsInsert.js"></script>
 <script>
-  let userSession = JSON.parse(localStorage.getItem("userSession"))
-  // let resetPageDecisions = localStorage.getItem("resetPage?")
+  
+  let savedId = localStorage.getItem("saveID")
 </script>
-<script src="functionsInsert.js"></script>
-<script src="index.js"></script>
+<script src="../script/discussionPages.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
